@@ -7,21 +7,26 @@
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "sway/workspaces",
+    //"sway/workspaces",
+    "hyprland/workspaces",
     "sway/mode",
     "sway/scratchpad",
     "custom/media",
-  ],
-  "modules-center": ["clock", "sway/window"],
-  "modules-right": [
-    "mpd",
-    "idle_inhibitor",
-    "pulseaudio",
-    "network",
-    "power-profiles-daemon",
     "cpu",
     "memory",
     "temperature",
+    "hyprland/window",
+  ],
+  "modules-center": [
+    //"sway/window",
+    "idle_inhibitor",
+    "clock",
+    "power-profiles-daemon",
+  ],
+  "modules-right": [
+    "mpd",
+    "network",
+    "pulseaudio",
     "backlight",
     "keyboard-state",
     "sway/language",
@@ -48,6 +53,12 @@
   //         "default": ""
   //     }
   // },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": { "*": 4 },
+  },
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -96,8 +107,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": "",
+      "activated": " ",
+      "deactivated": " ",
     },
   },
   "tray": {
@@ -128,6 +139,7 @@
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "reverse-scrolling": true,
   },
   "battery": {
     "states": {
